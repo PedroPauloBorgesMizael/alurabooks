@@ -1,0 +1,13 @@
+.BannerGradiente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    height: 120px;
+}
+
+.BannerGradiente h3 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+}

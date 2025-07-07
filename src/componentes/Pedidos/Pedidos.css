@@ -1,0 +1,53 @@
+.pedidos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 140px 0 180px 0;
+}
+
+.pedidos .filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    top: 120px;
+    left: 110px;
+}
+
+.pedidos .filtro li {
+    width: 160px;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: solid 1px #C4C4C4;
+}
+
+.pedidos .filtro li a {
+    font-weight: 400;
+    color: #002F52;
+    text-decoration: none;
+}
+
+.pedidos .filtro .select {
+    font-weight: 700;
+    border-bottom: solid 1px #0E3E61;
+}
+
+.pedidos .pedidos-container {
+    min-width: 60vw;
+}
+
+.pedidos .pedidos-container .pedidos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border-bottom: solid 1px #002F52;
+    padding: 0 32px 40px 8px;
+}
+
+.pedidos .pedidos-container .pedidos-content button {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 16px;
+    height: min-content;
+    width: min-content;
+}

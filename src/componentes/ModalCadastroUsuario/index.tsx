@@ -1,11 +1,17 @@
 import { AbBotao, AbCampoTexto, AbModal } from "ds-alurabooks"
+import axios from 'axios';
 import { useState } from "react"
 
 import imagemPrincipal from './assets/login.png'
 
 import './ModalCadastroUsuario.css'
 
-const ModalCadastroUsuario = () => {
+interface ModalCadastroUsuarioProps {
+    aberta: boolean
+    aoFechar: () => void
+}
+
+const ModalCadastroUsuario = ({ aberta, aoFechar }: ModalCadastroUsuarioProps) => {
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -25,14 +31,27 @@ const ModalCadastroUsuario = () => {
             cep,
             complemento
         }
-        console.log(usuario)
-        alert('Usuário foi cadastrado com sucesso!')
+
+        axios.post('http://localhost:8000/public/registrar', usuario)
+            .then(() => {
+                setNome('')
+                setEmail('')
+                setSenha('')
+                setEndereco('')
+                setCep('')
+                setComplemento('')
+                aoFechar()
+                alert('Usuário foi cadastrado com sucesso!')
+            })
+            .catch(() => {
+                alert('OPS! Alguma coisa deu errado')
+            })
     }
 
     return (<AbModal 
         titulo="Cadastrar" 
-        aberta={true}
-        aoFechar={() => console.log('fecha ai')}    
+        aberta={aberta}
+        aoFechar={aoFechar}    
     >
         <section className="corpoModalCadastro">
             <figure>
@@ -43,39 +62,46 @@ const ModalCadastroUsuario = () => {
                     label="Nome"
                     value={nome}
                     onChange={setNome}
+                    placeholder="Seu nome completo"
                 />
                 <AbCampoTexto 
                     label="E-mail"
                     value={email}
                     onChange={setEmail}
                     type="email"
+                    placeholder="seuemail@books.com.br"
                 />
                 <AbCampoTexto 
                     label="Endereço"
                     value={endereco}
                     onChange={setEndereco}
+                    placeholder="Sua rua e número"
                 />
                 <AbCampoTexto 
                     label="Complemento"
                     value={complemento}
                     onChange={setComplemento}
+                    placeholder="Apto/casa, bloco, referência"
                 />
                 <AbCampoTexto 
                     label="CEP"
                     value={cep}
                     onChange={setCep}
+                    placeholder="XXXXX-XXX"
                 />
                 <AbCampoTexto 
                     label="Senha"
                     value={senha}
                     onChange={setSenha}
                     type="password"
+                    placeholder="*********"
                 />
                 <AbCampoTexto 
                     label="Confirmação da senha"
                     value={senhaConfirmada}
                     onChange={setSenhaConfirmada}
                     type="password"
+                    placeholder="*********"
                 />
                 <div className="acoes">
                     <AbBotao texto="Cadastrar"/>

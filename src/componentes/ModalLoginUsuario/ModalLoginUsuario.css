@@ -1,0 +1,57 @@
+.corpoModalLogin {
+    display: flex;
+}
+
+.corpoModalLogin figure {
+    width: 40%;
+}
+
+.corpoModalLogin figure img {
+    width: 100%;
+}
+
+.corpoModalLogin .content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.corpoModalLogin .content form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.corpoModalLogin .content form .to-enter-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+
+    a {
+        color: #002F52;
+    }
+}
+
+.register {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 16px 0 16px;
+    border-top: 1px solid #002F52;
+}
+
+.register h6 {
+    color: #002F52;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.register button,
+.to-enter-button button {
+    font-size: 16px;
+    padding: 0;
+    width: 128px;
+    height: 40px;
+}

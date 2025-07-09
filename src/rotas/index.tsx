@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import Home from "../paginas/Home"
 import PaginaBase from "../paginas/PaginaBase"
 import MyAccount from "../paginas/MyAccount"
-import Pedidos from "../componentes/Pedidos"
+import Pedidos from "../paginas/Pedidos"
 
 
 const Rotas = () => {

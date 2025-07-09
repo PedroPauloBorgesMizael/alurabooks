@@ -1,0 +1,29 @@
+.MyAccount {
+    display: flex;
+    width: 900px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filtro li {
+    width: 160px;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: solid 1px #C4C4C4;
+}
+
+.filtro li a {
+    font-weight: 400;
+    color: #002F52;
+    text-decoration: none;
+}
+
+.MyAccount .conteudo {
+    flex-grow: 1;
+}
